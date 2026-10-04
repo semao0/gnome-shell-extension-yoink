@@ -40,7 +40,7 @@ Then log out and back in (Wayland can't reload the Shell in place) and enable th
 gnome-extensions enable yoink@semao0.github.io
 ```
 
-You need `glib-compile-schemas` and `msgfmt` from gettext. Both are usually installed already.
+You need `glib-compile-schemas`, `msgfmt` from gettext, and `zip`. They are usually installed already.
 
 ### From a CI build
 

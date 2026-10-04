@@ -14,7 +14,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            gjs gir1.2-glib-2.0 libglib2.0-bin x11-xkb-utils xkb-data gettext nodejs
+            gjs gir1.2-glib-2.0 libglib2.0-bin x11-xkb-utils xkb-data gettext nodejs zip
       - name: Check
         run: make check build
       - name: Pack

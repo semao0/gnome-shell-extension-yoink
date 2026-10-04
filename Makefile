@@ -23,8 +23,9 @@ locale/%/LC_MESSAGES/$(DOMAIN).mo: po/%.po
 # The zip to upload to extensions.gnome.org
 pack: $(UUID).shell-extension.zip
 
-$(UUID).shell-extension.zip: metadata.json $(JS) $(PO) schemas/*.gschema.xml
-	gnome-extensions pack --force --extra-source=lib --podir=po .
+$(UUID).shell-extension.zip: build metadata.json $(JS)
+	rm -f $@
+	zip -qr $@ metadata.json extension.js prefs.js lib schemas locale LICENSE
 
 install: pack
 	gnome-extensions install --force $(UUID).shell-extension.zip

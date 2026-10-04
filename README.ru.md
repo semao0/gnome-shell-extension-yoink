@@ -37,7 +37,7 @@ make install
 gnome-extensions enable yoink@semao0.github.io
 ```
 
-Нужны `glib-compile-schemas` и `msgfmt` из gettext, обычно они уже установлены. Готовый zip собирается на каждый коммит и лежит в артефактах [CI](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml).
+Нужны `glib-compile-schemas`, `msgfmt` из gettext и `zip`, обычно они уже установлены. Готовый zip собирается на каждый коммит и лежит в артефактах [CI](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml).
 
 ## Использование
 
