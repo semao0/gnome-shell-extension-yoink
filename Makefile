@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-UUID := shift-copy@semao0.github.io
-DOMAIN := shift-copy
+UUID := yoink@semao0.github.io
+DOMAIN := yoink
 EXT_DIR := $(HOME)/.local/share/gnome-shell/extensions/$(UUID)
 JS := extension.js prefs.js $(wildcard lib/*.js) $(wildcard tests/*.js)
 PO := $(wildcard po/*.po)

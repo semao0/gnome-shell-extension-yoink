@@ -26,7 +26,7 @@ class FakeInputSources {
     }
 }
 
-const settings = makeSettings(`${ROOT}/schemas`, 'org.gnome.shell.extensions.shift-copy');
+const settings = makeSettings(`${ROOT}/schemas`, 'org.gnome.shell.extensions.yoink');
 const ptyxis = makeSettings(`${ROOT}/tests/fixtures`, 'org.gnome.Ptyxis.Shortcuts');
 const sources = new FakeInputSources(['us', 'ru', 'ua', 'gr', 'us+dvorak', 'de']);
 const fix = new PtyxisShortcuts(settings, ptyxis, sources);

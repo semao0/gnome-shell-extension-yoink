@@ -1,6 +1,8 @@
-# Shift Copy: копирование при выделении и история буфера обмена для GNOME Shell
+# Yoink: копирование при выделении и история буфера обмена для GNOME Shell
 
-[![CI](https://github.com/semao0/gnome-shell-extension-shift-copy/actions/workflows/ci.yml/badge.svg)](https://github.com/semao0/gnome-shell-extension-shift-copy/actions/workflows/ci.yml)
+> *yoink* (англ. сленг) — «цап!», быстро схватить. Выделили текст, и он уже ваш.
+
+[![CI](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml/badge.svg)](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml)
 [![GNOME Shell 49–51](https://img.shields.io/badge/GNOME_Shell-49%20%7C%2050%20%7C%2051-4A86CF?logo=gnome&logoColor=white)](#совместимость)
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/License-GPL--2.0--or--later-blue.svg)](LICENSE)
 
@@ -18,24 +20,24 @@
 - **Выделение в TUI-программах.** Терминал отдаёт мышь программам вроде Claude Code, Codex, vim и tmux. С зажатым Shift он всё равно выделяет текст, а расширение сразу его копирует.
 - **История буфера обмена.** Последние 5–200 скопированных текстов доступны из верхней панели и по <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>. Щелчок по записи копирует её снова.
 - **Приватность.** История хранится в памяти. Сохранение в файл, доступный только вам, включается отдельно. Пароли из KeePassXC и других менеджеров паролей никогда не записываются.
-- **Сочетания терминала на нелатинских раскладках.** В приложениях на GTK 4 сочетания вроде Ctrl+Shift+C и Ctrl+Shift+V не срабатывают на русской, украинской, греческой и других нелатинских раскладках ([GTK #5537](https://gitlab.gnome.org/GNOME/gtk/-/issues/5537)). Shift Copy исправляет это для терминала [Ptyxis](https://gitlab.gnome.org/chergert/ptyxis), который стоит по умолчанию в Fedora и Ubuntu.
+- **Сочетания терминала на нелатинских раскладках.** В приложениях на GTK 4 сочетания вроде Ctrl+Shift+C и Ctrl+Shift+V не срабатывают на русской, украинской, греческой и других нелатинских раскладках ([GTK #5537](https://gitlab.gnome.org/GNOME/gtk/-/issues/5537)). Yoink исправляет это для терминала [Ptyxis](https://gitlab.gnome.org/chergert/ptyxis), который стоит по умолчанию в Fedora и Ubuntu.
 - **Не мешает.** Значок в панели можно скрыть, история всё равно открывается по сочетанию клавиш.
 
 ## Установка
 
 ```sh
-git clone https://github.com/semao0/gnome-shell-extension-shift-copy.git
-cd gnome-shell-extension-shift-copy
+git clone https://github.com/semao0/gnome-shell-extension-yoink.git
+cd gnome-shell-extension-yoink
 make install
 ```
 
 Затем выйдите из сеанса и войдите снова (на Wayland Shell нельзя перезапустить на лету) и включите расширение:
 
 ```sh
-gnome-extensions enable shift-copy@semao0.github.io
+gnome-extensions enable yoink@semao0.github.io
 ```
 
-Нужны `glib-compile-schemas` и `msgfmt` из gettext, обычно они уже установлены. Готовый zip собирается на каждый коммит и лежит в артефактах [CI](https://github.com/semao0/gnome-shell-extension-shift-copy/actions/workflows/ci.yml).
+Нужны `glib-compile-schemas` и `msgfmt` из gettext, обычно они уже установлены. Готовый zip собирается на каждый коммит и лежит в артефактах [CI](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml).
 
 ## Использование
 
@@ -56,9 +58,9 @@ gnome-extensions enable shift-copy@semao0.github.io
 
 ## Если что-то не работает
 
-- **Ничего не копируется.** Проверьте, что расширение включено (`gnome-extensions info shift-copy@semao0.github.io`), и что зажаты *все* модификаторы из настроек.
+- **Ничего не копируется.** Проверьте, что расширение включено (`gnome-extensions info yoink@semao0.github.io`), и что зажаты *все* модификаторы из настроек.
 - **Super не работает как модификатор.** GNOME по умолчанию перетаскивает окна по Super и мыши. Выберите другой модификатор или выполните `gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'`.
-- **Ctrl+Shift+V всё ещё не работает на раскладке.** Проверьте, что установлен `xkbcomp`, и посмотрите журнал: `journalctl --user -b -g 'Shift Copy'`.
+- **Ctrl+Shift+V всё ещё не работает на раскладке.** Проверьте, что установлен `xkbcomp`, и посмотрите журнал: `journalctl --user -b -g 'Yoink'`.
 
 ## Лицензия
 

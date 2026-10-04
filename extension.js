@@ -13,7 +13,7 @@ import {HistoryIndicator} from './lib/indicator.js';
 import {PTYXIS_SCHEMA, PtyxisShortcuts} from './lib/ptyxisShortcuts.js';
 import {SelectionWatcher} from './lib/selectionWatcher.js';
 
-export default class ShiftCopyExtension extends Extension {
+export default class YoinkExtension extends Extension {
     enable() {
         this._settings = this.getSettings();
 

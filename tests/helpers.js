@@ -25,7 +25,7 @@ export function finish() {
 }
 
 export function makeTempDir() {
-    return GLib.dir_make_tmp('shift-copy-test-XXXXXX');
+    return GLib.dir_make_tmp('yoink-test-XXXXXX');
 }
 
 /**

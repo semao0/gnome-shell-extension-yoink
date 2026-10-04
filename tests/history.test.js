@@ -5,7 +5,7 @@ import GLib from 'gi://GLib';
 import {ClipboardHistory} from '../lib/history.js';
 import {ROOT, assertEqual, finish, makeSettings, makeTempDir} from './helpers.js';
 
-const settings = makeSettings(`${ROOT}/schemas`, 'org.gnome.shell.extensions.shift-copy');
+const settings = makeSettings(`${ROOT}/schemas`, 'org.gnome.shell.extensions.yoink');
 const path = `${makeTempDir()}/data/history.json`;
 let changes = 0;
 const history = new ClipboardHistory(settings, path, () => changes++);

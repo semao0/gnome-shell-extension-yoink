@@ -1,9 +1,9 @@
-# Russian translation for Shift Copy.
+# Russian translation for Yoink.
 # SPDX-License-Identifier: GPL-2.0-or-later
 msgid ""
 msgstr ""
-"Project-Id-Version: shift-copy\n"
-"Report-Msgid-Bugs-To: https://github.com/semao0/gnome-shell-extension-shift-copy/issues\n"
+"Project-Id-Version: yoink\n"
+"Report-Msgid-Bugs-To: https://github.com/semao0/gnome-shell-extension-yoink/issues\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

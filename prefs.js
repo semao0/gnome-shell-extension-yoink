@@ -8,7 +8,7 @@ import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Ex
 
 import {MODIFIERS, formatModifiers} from './lib/modifiers.js';
 
-export default class ShiftCopyPreferences extends ExtensionPreferences {
+export default class YoinkPreferences extends ExtensionPreferences {
     fillPreferencesWindow(window) {
         const settings = this.getSettings();
         const page = new Adw.PreferencesPage();

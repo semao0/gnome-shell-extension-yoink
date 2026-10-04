@@ -1,6 +1,8 @@
-# Shift Copy: copy on select and clipboard history for GNOME Shell
+# Yoink: copy on select and clipboard history for GNOME Shell
 
-[![CI](https://github.com/semao0/gnome-shell-extension-shift-copy/actions/workflows/ci.yml/badge.svg)](https://github.com/semao0/gnome-shell-extension-shift-copy/actions/workflows/ci.yml)
+> *yoink* (slang): to grab something quickly. Select text, and it's yours.
+
+[![CI](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml/badge.svg)](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml)
 [![GNOME Shell 49–51](https://img.shields.io/badge/GNOME_Shell-49%20%7C%2050%20%7C%2051-4A86CF?logo=gnome&logoColor=white)](#compatibility)
 [![Wayland](https://img.shields.io/badge/Wayland-ready-success)](#how-it-works)
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/License-GPL--2.0--or--later-blue.svg)](LICENSE)
@@ -19,7 +21,7 @@ It works on Wayland in any app, and also in terminal programs that grab the mous
 - **Selection inside TUI apps.** Terminals hand the mouse to programs like Claude Code, Codex, vim or tmux. Holding Shift makes the terminal select text anyway, and the extension copies it in the same gesture.
 - **Clipboard history.** The last 5–200 copied texts sit in the top panel and open with <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>. Click an entry to copy it again.
 - **Private by default.** History lives in memory. You can opt in to saving it to a file only you can read. Passwords copied from KeePassXC and other password managers are never recorded.
-- **Terminal shortcuts on non-Latin layouts.** In GTK 4 apps, shortcuts like Ctrl+Shift+C and Ctrl+Shift+V stop working when a Russian, Ukrainian, Greek or other non-Latin layout is active ([GTK #5537](https://gitlab.gnome.org/GNOME/gtk/-/issues/5537)). Shift Copy fixes this for the [Ptyxis](https://gitlab.gnome.org/chergert/ptyxis) terminal, the default in Fedora and Ubuntu.
+- **Terminal shortcuts on non-Latin layouts.** In GTK 4 apps, shortcuts like Ctrl+Shift+C and Ctrl+Shift+V stop working when a Russian, Ukrainian, Greek or other non-Latin layout is active ([GTK #5537](https://gitlab.gnome.org/GNOME/gtk/-/issues/5537)). Yoink fixes this for the [Ptyxis](https://gitlab.gnome.org/chergert/ptyxis) terminal, the default in Fedora and Ubuntu.
 - **Out of your way.** The panel icon can be hidden. The history shortcut still opens the menu.
 
 ## Installation
@@ -27,25 +29,25 @@ It works on Wayland in any app, and also in terminal programs that grab the mous
 ### From source
 
 ```sh
-git clone https://github.com/semao0/gnome-shell-extension-shift-copy.git
-cd gnome-shell-extension-shift-copy
+git clone https://github.com/semao0/gnome-shell-extension-yoink.git
+cd gnome-shell-extension-yoink
 make install
 ```
 
 Then log out and back in (Wayland can't reload the Shell in place) and enable the extension:
 
 ```sh
-gnome-extensions enable shift-copy@semao0.github.io
+gnome-extensions enable yoink@semao0.github.io
 ```
 
 You need `glib-compile-schemas` and `msgfmt` from gettext. Both are usually installed already.
 
 ### From a CI build
 
-Every push builds an installable zip. Download it from the latest [CI run](https://github.com/semao0/gnome-shell-extension-shift-copy/actions/workflows/ci.yml), then:
+Every push builds an installable zip. Download it from the latest [CI run](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml), then:
 
 ```sh
-gnome-extensions install --force shift-copy@semao0.github.io.shell-extension.zip
+gnome-extensions install --force yoink@semao0.github.io.shell-extension.zip
 ```
 
 ## Usage
@@ -62,8 +64,8 @@ gnome-extensions install --force shift-copy@semao0.github.io.shell-extension.zip
 Everything is in the preferences window. You can also use `gsettings`:
 
 ```sh
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/shift-copy@semao0.github.io/schemas \
-  set org.gnome.shell.extensions.shift-copy copy-modifiers "['ctrl', 'shift']"
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/yoink@semao0.github.io/schemas \
+  set org.gnome.shell.extensions.yoink copy-modifiers "['ctrl', 'shift']"
 ```
 
 | Key | Default | Meaning |
@@ -71,7 +73,7 @@ gsettings --schemadir ~/.local/share/gnome-shell/extensions/shift-copy@semao0.gi
 | `copy-on-select` | `true` | Copy selected text to the clipboard |
 | `copy-modifiers` | `['shift']` | Keys that must all be held while selecting: `shift`, `ctrl`, `alt`, `super`. An empty list copies every selection |
 | `history-size` | `30` | How many entries to keep (5–200) |
-| `persist-history` | `false` | Keep the history across restarts in `~/.local/share/shift-copy@semao0.github.io/history.json` (mode 600) |
+| `persist-history` | `false` | Keep the history across restarts in `~/.local/share/yoink@semao0.github.io/history.json` (mode 600) |
 | `toggle-menu` | `['<Super><Shift>v']` | Shortcut that opens the history |
 | `show-indicator` | `true` | Show the icon in the top panel |
 | `fix-ptyxis-layouts` | `true` | Keep Ptyxis shortcuts working on non-Latin layouts |
@@ -90,10 +92,10 @@ gsettings --schemadir ~/.local/share/gnome-shell/extensions/shift-copy@semao0.gi
 
 ## Troubleshooting
 
-- **Nothing is copied.** Make sure the extension is enabled (`gnome-extensions info shift-copy@semao0.github.io`) and that you hold *every* modifier listed in the settings.
+- **Nothing is copied.** Make sure the extension is enabled (`gnome-extensions info yoink@semao0.github.io`) and that you hold *every* modifier listed in the settings.
 - **Super doesn't work as a modifier.** GNOME moves windows with Super and drag. Change it with `gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'`, or pick another modifier.
-- **Ctrl+Shift+V still fails on my layout.** Check that `xkbcomp` is installed, then look at the Shell log: `journalctl --user -b -g 'Shift Copy'`.
-- **Logs.** `journalctl --user -b /usr/bin/gnome-shell | grep -i 'shift copy'`
+- **Ctrl+Shift+V still fails on my layout.** Check that `xkbcomp` is installed, then look at the Shell log: `journalctl --user -b -g 'Yoink'`.
+- **Logs.** `journalctl --user -b /usr/bin/gnome-shell | grep -i 'yoink'`
 
 ## Development
 
@@ -106,7 +108,7 @@ make pot      # refresh the translation template
 
 Code that touches the Shell lives in `extension.js` and `lib/indicator.js`. The logic in `lib/history.js` and `lib/ptyxisShortcuts.js` runs under plain `gjs` and is covered by `tests/`.
 
-Translations are welcome. Copy `po/shift-copy.pot` (from `make pot`) to `po/<lang>.po` and open a pull request.
+Translations are welcome. Copy `po/yoink.pot` (from `make pot`) to `po/<lang>.po` and open a pull request.
 
 ## License
 
