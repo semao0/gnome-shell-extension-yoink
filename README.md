@@ -112,4 +112,4 @@ Translations are welcome. Copy `po/yoink.pot` (from `make pot`) to `po/<lang>.po
 
 ## License
 
-[GPL-2.0-or-later](LICENSE), like GNOME Shell itself.
+[GPL-2.0-or-later](LICENSE)

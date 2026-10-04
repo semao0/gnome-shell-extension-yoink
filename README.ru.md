@@ -64,4 +64,4 @@ gnome-extensions enable yoink@semao0.github.io
 
 ## Лицензия
 
-[GPL-2.0-or-later](LICENSE), как и у самого GNOME Shell.
+[GPL-2.0-or-later](LICENSE)
