@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A few keys of the real Ptyxis schema, enough to test against -->
+<schemalist>
+  <schema id="org.gnome.Ptyxis.Shortcuts" path="/org/gnome/Ptyxis/Shortcuts/">
+    <key name="copy-clipboard" type="s"><default>'&lt;ctrl&gt;&lt;shift&gt;c'</default></key>
+    <key name="paste-clipboard" type="s"><default>'&lt;ctrl&gt;&lt;shift&gt;v'</default></key>
+    <key name="new-tab" type="s"><default>'&lt;ctrl&gt;&lt;shift&gt;t'</default></key>
+    <key name="close-tab" type="s"><default>'&lt;ctrl&gt;&lt;shift&gt;w'</default></key>
+    <key name="zoom-in" type="s"><default>'&lt;ctrl&gt;plus'</default></key>
+    <key name="reset" type="s"><default>''</default></key>
+  </schema>
+</schemalist>

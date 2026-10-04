@@ -1,0 +1,10 @@
+{
+  "uuid": "shift-copy@semao0.github.io",
+  "name": "Shift Copy",
+  "description": "Copy on select with a modifier key, clipboard history and terminal shortcuts that work on any keyboard layout.\n\n• Hold Shift while selecting text and it goes to the clipboard, ready for Ctrl+V. Works in terminals too, even inside apps that capture the mouse, like Claude Code, Codex, vim or tmux. Pick any modifier combination, or none to copy every selection.\n• Clipboard history in the top panel or on Super+Shift+V. Passwords from KeePassXC are skipped.\n• Ptyxis Ctrl+Shift+C, Ctrl+Shift+V and other shortcuts on Cyrillic, Greek and other non-Latin layouts.",
+  "shell-version": ["49", "50", "51"],
+  "url": "https://github.com/semao0/gnome-shell-extension-shift-copy",
+  "settings-schema": "org.gnome.shell.extensions.shift-copy",
+  "gettext-domain": "shift-copy",
+  "version-name": "1.0"
+}

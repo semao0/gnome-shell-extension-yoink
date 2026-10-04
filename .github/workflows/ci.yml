@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            gjs gir1.2-glib-2.0 libglib2.0-bin x11-xkb-utils xkb-data gettext nodejs
+      - name: Check
+        run: make check build
+      - name: Pack
+        run: make pack
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shift-copy-extension
+          path: "*.shell-extension.zip"

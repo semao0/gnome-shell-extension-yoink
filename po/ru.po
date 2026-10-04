@@ -1,0 +1,123 @@
+# Russian translation for Shift Copy.
+# SPDX-License-Identifier: GPL-2.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: shift-copy\n"
+"Report-Msgid-Bugs-To: https://github.com/semao0/gnome-shell-extension-shift-copy/issues\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: lib/indicator.js
+msgid "History is empty"
+msgstr "История пуста"
+
+#: lib/indicator.js
+msgid "Clear History"
+msgstr "Очистить историю"
+
+#: lib/indicator.js
+msgid "Settings"
+msgstr "Настройки"
+
+#. %s is a key combination like Ctrl+Shift
+#: lib/indicator.js
+msgid "Copy on select with %s"
+msgstr "Копировать при выделении с %s"
+
+#: lib/indicator.js
+msgid "Copy on select"
+msgstr "Копировать при выделении"
+
+#: prefs.js
+msgid "Copy on Select"
+msgstr "Копирование при выделении"
+
+#: prefs.js
+msgid "Selected text goes straight to the clipboard, ready for Ctrl+V."
+msgstr "Выделенный текст сразу попадает в буфер обмена для Ctrl+V."
+
+#: prefs.js
+msgid "Enabled"
+msgstr "Включено"
+
+#: prefs.js
+msgid "Modifiers"
+msgstr "Модификаторы"
+
+#: prefs.js
+msgid ""
+"Copy only while all checked keys are held during the selection. Check none "
+"to copy every selection."
+msgstr ""
+"Копировать, только если при выделении зажаты все отмеченные клавиши. Ничего "
+"не отмечено — копируется любое выделение."
+
+#: prefs.js
+msgid ""
+"In terminals it also selects text inside apps that capture the mouse, such "
+"as Claude Code, Codex or vim"
+msgstr ""
+"В терминале ещё и позволяет выделять текст в программах, которые "
+"перехватывают мышь: Claude Code, Codex, vim"
+
+#: prefs.js
+msgid "GNOME moves windows with Super and the mouse by default"
+msgstr "По умолчанию GNOME перетаскивает окна по Super и мыши"
+
+#: prefs.js
+msgid "History"
+msgstr "История"
+
+#: prefs.js
+msgid "History size"
+msgstr "Размер истории"
+
+#: prefs.js
+msgid "Keep across restarts"
+msgstr "Сохранять между перезагрузками"
+
+#. %s is a file path
+#: prefs.js
+msgid ""
+"Stored in %s, readable only by you. Passwords from KeePassXC are never saved."
+msgstr ""
+"Хранится в %s, доступна только вам. Пароли из KeePassXC не сохраняются."
+
+#: prefs.js
+msgid "Open history"
+msgstr "Открыть историю"
+
+#: prefs.js
+msgid "Change it with gsettings, key toggle-menu"
+msgstr "Меняется через gsettings, ключ toggle-menu"
+
+#: prefs.js
+msgid "Panel icon"
+msgstr "Значок в панели"
+
+#: prefs.js
+msgid ""
+"When off, the icon shows only while the history is open. These settings then "
+"open from the Extensions app."
+msgstr ""
+"Если выключить, значок появляется только пока открыта история. Настройки "
+"тогда открываются через приложение «Расширения»."
+
+#: prefs.js
+msgid "Keyboard Layouts"
+msgstr "Раскладки"
+
+#: prefs.js
+msgid "Ptyxis shortcuts on any layout"
+msgstr "Сочетания Ptyxis на любой раскладке"
+
+#: prefs.js
+msgid ""
+"Ctrl+Shift+C, Ctrl+Shift+V and the rest keep working on Cyrillic, Greek and "
+"other non-Latin layouts"
+msgstr ""
+"Ctrl+Shift+C, Ctrl+Shift+V и другие сочетания работают на кириллице, "
+"греческой и других нелатинских раскладках"

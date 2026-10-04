@@ -1,0 +1,5 @@
+schemas/gschemas.compiled
+locale/
+*.shell-extension.zip
+*.zip
+node_modules/

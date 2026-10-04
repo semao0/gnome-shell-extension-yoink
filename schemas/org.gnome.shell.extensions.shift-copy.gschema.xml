@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.shift-copy"
+          path="/org/gnome/shell/extensions/shift-copy/">
+    <key name="copy-on-select" type="b">
+      <default>true</default>
+      <summary>Copy selection to CLIPBOARD</summary>
+      <description>Selecting text while holding the modifier replaces what Ctrl+V pastes.</description>
+    </key>
+    <key name="copy-modifiers" type="as">
+      <default>['shift']</default>
+      <summary>Modifiers to hold while selecting</summary>
+      <description>All listed modifiers (shift, ctrl, alt, super) must be held. An empty list copies every selection.</description>
+    </key>
+    <key name="history-size" type="i">
+      <range min="5" max="200"/>
+      <default>30</default>
+      <summary>Number of clipboard entries to keep</summary>
+    </key>
+    <key name="persist-history" type="b">
+      <default>false</default>
+      <summary>Keep history across restarts</summary>
+    </key>
+    <key name="toggle-menu" type="as">
+      <default><![CDATA[['<Super><Shift>v']]]></default>
+      <summary>Shortcut to open the history menu</summary>
+    </key>
+    <key name="show-indicator" type="b">
+      <default>true</default>
+      <summary>Show the icon in the top panel</summary>
+      <description>When hidden, the icon appears only while the history menu is open.</description>
+    </key>
+    <key name="fix-ptyxis-layouts" type="b">
+      <default>true</default>
+      <summary>Make Ptyxis shortcuts work on non-Latin layouts</summary>
+    </key>
+    <key name="ptyxis-base-shortcuts" type="a{ss}">
+      <default>{}</default>
+      <summary>Ptyxis shortcuts to restore</summary>
+      <description>Internal: the original shortcuts while translated ones are in place.</description>
+    </key>
+  </schema>
+</schemalist>
