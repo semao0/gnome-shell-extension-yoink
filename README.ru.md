@@ -3,7 +3,7 @@
 > *yoink* (англ. сленг) — «цап!», быстро схватить. Выделили текст, и он уже ваш.
 
 [![CI](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml/badge.svg)](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml)
-[![GNOME Shell 49–51](https://img.shields.io/badge/GNOME_Shell-49%20%7C%2050%20%7C%2051-4A86CF?logo=gnome&logoColor=white)](#совместимость)
+[![GNOME Shell 49–50](https://img.shields.io/badge/GNOME_Shell-49%20%7C%2050-4A86CF?logo=gnome&logoColor=white)](#совместимость)
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/License-GPL--2.0--or--later-blue.svg)](LICENSE)
 
 [English](README.md) | **Русский**
@@ -52,7 +52,7 @@ gnome-extensions enable yoink@semao0.github.io
 
 ## Совместимость
 
-- GNOME Shell 49, 50 и 51. Разрабатывается и проверяется на GNOME 50 с Wayland.
+- GNOME Shell 49 и 50. Разрабатывается и проверяется на GNOME 50 с Wayland.
 - Исправлению раскладок нужны Ptyxis и `xkbcomp` (пакет `x11-xkb-utils` или `xkbcomp`). Без них остальное работает.
 - Выделение в TUI-программах с Shift поддерживают Ptyxis, GNOME Console, VS Code, Kitty, Alacritty и WezTerm.
 

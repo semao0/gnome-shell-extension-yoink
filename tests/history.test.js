@@ -9,7 +9,7 @@ const settings = makeSettings(`${ROOT}/schemas`, 'org.gnome.shell.extensions.yoi
 const path = `${makeTempDir()}/data/history.json`;
 let changes = 0;
 const history = new ClipboardHistory(settings, path, () => changes++);
-history.enable();
+await history.enable();
 
 history.add('one');
 history.add('two');
@@ -24,18 +24,25 @@ for (let i = 0; i < 10; i++)
 assertEqual(history.items.length, 5, 'trimmed to history-size');
 
 settings.set_boolean('persist-history', true);
+await history.flush();
 assertEqual(GLib.file_test(path, GLib.FileTest.EXISTS), true, 'saved once persist-history is on');
 assertEqual(fileMode(path), 0o600, 'history file readable only by the owner');
 
 const reloaded = new ClipboardHistory(settings, path, () => {});
-reloaded.enable();
-assertEqual(reloaded.items, history.items, 'reloaded after a restart');
+const loading = reloaded.enable();
+reloaded.add('copied while loading');
+await loading;
+await reloaded.flush();
+assertEqual(reloaded.items, ['copied while loading', ...history.items.slice(0, 4)],
+    'reloaded after a restart, new entries on top');
+assertEqual(fileMode(path), 0o600, 'still private after a rewrite');
 reloaded.disable();
 
 history.clear();
 assertEqual(history.items, [], 'cleared');
 
 settings.set_boolean('persist-history', false);
+await history.flush();
 assertEqual(GLib.file_test(path, GLib.FileTest.EXISTS), false, 'file removed when persist-history is off');
 
 history.disable();

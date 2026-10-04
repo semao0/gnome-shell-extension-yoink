@@ -1,10 +1,13 @@
 {
   "uuid": "yoink@semao0.github.io",
   "name": "Yoink",
-  "description": "Copy on select with a modifier key, clipboard history and terminal shortcuts that work on any keyboard layout.\n\n• Hold Shift while selecting text and it goes to the clipboard, ready for Ctrl+V. Works in terminals too, even inside apps that capture the mouse, like Claude Code, Codex, vim or tmux. Pick any modifier combination, or none to copy every selection.\n• Clipboard history in the top panel or on Super+Shift+V. Passwords from KeePassXC are skipped.\n• Ptyxis Ctrl+Shift+C, Ctrl+Shift+V and other shortcuts on Cyrillic, Greek and other non-Latin layouts.",
-  "shell-version": ["49", "50", "51"],
+  "description": "Copy on select with a modifier key, clipboard history and terminal shortcuts that work on any keyboard layout.\n\n• Hold Shift while selecting text and it goes to the clipboard, ready for Ctrl+V. Works in terminals too, even inside apps that capture the mouse, like Claude Code, Codex, vim or tmux. Pick any modifier combination, or none to copy every selection.\n• Clipboard history in the top panel or on Super+Shift+V. Passwords from KeePassXC are skipped.\n• Ptyxis Ctrl+Shift+C, Ctrl+Shift+V and other shortcuts on Cyrillic, Greek and other non-Latin layouts.\n\nClipboard access: the extension reads the text you select and the clipboard, and writes the selection to the clipboard. It keeps the history in memory, and on disk only if you turn that on.",
+  "shell-version": [
+    "49",
+    "50"
+  ],
   "url": "https://github.com/semao0/gnome-shell-extension-yoink",
   "settings-schema": "org.gnome.shell.extensions.yoink",
   "gettext-domain": "yoink",
-  "version-name": "1.0"
+  "version-name": "1.1"
 }

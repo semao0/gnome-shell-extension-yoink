@@ -20,12 +20,12 @@ locale/%/LC_MESSAGES/$(DOMAIN).mo: po/%.po
 	if command -v msgfmt >/dev/null; then msgfmt --check -o $@ $<; \
 	else pybabel compile -i $< -o $@; fi
 
-# The zip to upload to extensions.gnome.org
+# The zip to upload to extensions.gnome.org. Schemas are compiled on install.
 pack: $(UUID).shell-extension.zip
 
 $(UUID).shell-extension.zip: build metadata.json $(JS)
 	rm -f $@
-	zip -qr $@ metadata.json extension.js prefs.js lib schemas locale LICENSE
+	zip -qr $@ metadata.json extension.js prefs.js lib schemas/*.gschema.xml locale LICENSE
 
 install: pack
 	gnome-extensions install --force $(UUID).shell-extension.zip

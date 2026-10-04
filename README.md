@@ -3,7 +3,7 @@
 > *yoink* (slang): to grab something quickly. Select text, and it's yours.
 
 [![CI](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml/badge.svg)](https://github.com/semao0/gnome-shell-extension-yoink/actions/workflows/ci.yml)
-[![GNOME Shell 49–51](https://img.shields.io/badge/GNOME_Shell-49%20%7C%2050%20%7C%2051-4A86CF?logo=gnome&logoColor=white)](#compatibility)
+[![GNOME Shell 49–50](https://img.shields.io/badge/GNOME_Shell-49%20%7C%2050-4A86CF?logo=gnome&logoColor=white)](#compatibility)
 [![Wayland](https://img.shields.io/badge/Wayland-ready-success)](#how-it-works)
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/License-GPL--2.0--or--later-blue.svg)](LICENSE)
 
@@ -86,7 +86,7 @@ gsettings --schemadir ~/.local/share/gnome-shell/extensions/yoink@semao0.github.
 
 ## Compatibility
 
-- GNOME Shell 49, 50 and 51. Developed and tested on GNOME 50 with Wayland.
+- GNOME Shell 49 and 50. Developed and tested on GNOME 50 with Wayland.
 - The layout fix needs Ptyxis and `xkbcomp` (package `x11-xkb-utils` or `xkbcomp`). Without them, the rest of the extension still works.
 - Selection inside TUI apps depends on the terminal. Ptyxis, GNOME Console, VS Code, Kitty, Alacritty and WezTerm all bypass mouse capture with Shift.
 
